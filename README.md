@@ -1,124 +1,157 @@
-# 🔐 Auth Starter
+# 📦 Inventory Management System (IMS)
 
-> A modern, production-ready authentication starter kit built with Next.js 16, Better Auth, and Convex.
+A modern inventory management system that replaces Excel sheets and manual tracking with a real-time, centralized solution. Built for inventory managers and warehouse staff.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-16-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38bdf8)
-
-## ✨ Features
-
-- **🚀 Next.js 16 (App Router)** - The latest and greatest from Vercel.
-- **🔒 Better Auth** - Secure, type-safe authentication.
-- **💾 Convex** - Real-time backend as a service.
-- **🎨 Shadcn UI** - Beautiful, accessible components.
-- **🎭 Framer Motion** - Smooth animations and transitions.
-- **📱 Responsive Design** - Mobile-first approach with a bottom drawer for auth.
-- **🖼️ Vercel Blob** - Easy image uploads for user profiles.
-- **✨ Polished UI** - Glassmorphism, blur effects, and smooth interactions.
-
-## 🛠️ Tech Stack
-
-- **Framework:** [Next.js 16](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
-- **Components:** [Shadcn UI](https://ui.shadcn.com/)
-- **Icons:** [Lucide React](https://lucide.dev/) & [Hugeicons](https://hugeicons.com/)
-- **Backend:** [Convex](https://www.convex.dev/)
-- **Auth:** [Better Auth](https://better-auth.com/)
-- **Storage:** [Vercel Blob](https://vercel.com/docs/storage/vercel-blob)
-- **Animations:** [Motion](https://motion.dev/) (Framer Motion)
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm, yarn, pnpm, or bun
-
-### Installation
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/yourusername/auth-starter.git
-    cd auth-starter
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    npm install
-    # or
-    bun install
-    ```
-
-3.  **Set up environment variables:**
-
-    Create a `.env` file in the root directory and add the following:
-
-    ```env
-    # Convex
-    CONVEX_DEPLOYMENT=your_convex_deployment
-    NEXT_PUBLIC_CONVEX_URL=your_convex_url
-    NEXT_PUBLIC_CONVEX_SITE_URL=your_convex_site_url
-
-    # Better Auth
-    BETTER_AUTH_SECRET=your_better_auth_secret
-    BETTER_AUTH_URL=http://localhost:3000
-
-    # Vercel Blob
-    NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN=your_vercel_blob_token
-    ```
-
-4.  **Run the development server:**
-
-    ```bash
-    npm run dev
-    # or
-    bun run dev
-    ```
-
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-5.  **Run Convex:**
-
-    In a separate terminal, run:
-
-    ```bash
-    npx convex dev
-    ```
-
-## 📂 Project Structure
-
-```
-.
-├── app/                  # Next.js App Router
-├── components/           # React components
-│   ├── ui/               # Shadcn UI components
-│   └── web/              # Web-specific components (AuthDrawer, etc.)
-├── lib/                  # Utilities and libraries
-│   ├── auth-client.ts    # Better Auth client
-│   └── utils.ts          # Helper functions
-├── convex/               # Convex backend functions
-└── public/               # Static assets
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1.  Fork the project
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![Convex](https://img.shields.io/badge/Convex-FF71B1)
+![BetterAuth](https://img.shields.io/badge/BetterAuth-6366F1)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000)
+![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC)
 
 ---
 
-Made with ❤️ by [BuddyCodez](https://github.com/BuddyCodez)
+## 🚀 Overview
+
+**Problem**: Businesses struggle with scattered Excel sheets, manual registers, and delayed stock updates.
+
+**Solution**: A centralized, real-time inventory system that tracks all stock movements automatically.
+
+---
+
+## ✨ Features
+
+### Dashboard
+- Real-time KPIs: Total products, low stock alerts, pending orders
+- Dynamic filters by document type, status, warehouse, category
+- Visual stock movement charts
+
+### Core Modules
+| Module | What it does |
+|--------|-------------|
+| **Products** | Create/edit products with SKU, category, unit of measure |
+| **Receipts** | Incoming stock from vendors (auto-increases stock) |
+| **Deliveries** | Outgoing stock for customers (auto-deducts stock) |
+| **Transfers** | Move stock between warehouses/locations |
+| **Adjustments** | Fix physical count mismatches |
+| **Ledger** | Complete history of all movements |
+
+### Smart Features
+- Low stock alerts via email/notification
+- Multi-warehouse support
+- Instant SKU search
+- Mobile responsive
+- CSV import/export
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | Next.js 15 (App Router) |
+| **UI Library** | shadcn/ui |
+| **Styling** | Tailwind CSS |
+| **Backend** | Convex (real-time, built-in DB) |
+| **Auth** | BetterAuth (OTP, email, social) |
+| **Charts** | Recharts |
+| **Forms** | React Hook Form + Zod |
+| **Deployment** | Vercel + Convex |
+
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone repo
+git clone https://github.com/yourusername/ims.git
+cd ims
+
+# Install dependencies
+npm install
+
+# Setup environment
+cp .env.example .env.local
+
+# Start Convex backend
+npx convex dev
+
+# Start Next.js (new terminal)
+npm run dev
+```
+
+Visit `http://localhost:3000`
+
+
+---
+
+## 📊 How It Works
+
+### Example Flow: Receiving Stock
+1. Create new receipt
+2. Add supplier "ABC Corp"
+3. Add product "Steel Rods" quantity 50
+4. Click Validate → Stock automatically +50
+
+### Example Flow: Shipping Order
+1. Create delivery order
+2. Pick products
+3. Validate → Stock automatically -10
+
+### Example Flow: Transfer
+1. Select source: Warehouse A
+2. Select destination: Warehouse B
+3. Move 20 units → Both locations updated
+
+### Example Flow: Adjustment
+1. Physical count shows 47, system says 50
+2. Enter counted quantity: 47
+3. System auto-calculates -3 and logs reason
+
+---
+
+## 🔑 Environment Variables
+
+```env
+# Required
+BETTER_AUTH_SECRET=your_secret
+BETTER_AUTH_URL=http://localhost:3000
+
+```
+
+---
+
+## 📱 User Roles
+
+| Role | Permissions |
+|------|-------------|
+| **Admin** | Full access, settings, user management |
+| **Manager** | Create/edit all, view reports |
+| **Staff** | Create receipts/deliveries, view products |
+
+---
+
+## 📈 Future Scope
+
+- Purchase order generation
+- Supplier/workers portal
+- Analytics and predictions
+
+
+## 📄 License
+
+MIT © IMS Team
+
+---
+
+<div align="center">
+  <p>Built for odoo  hackathon 2026</p>
+</div>
+
+---
